@@ -390,7 +390,7 @@ class HTTP11Connection(object):
                 return
 
             # Iterables that set a specific content length.
-            elif isinstance(body, collections.Iterable):
+            elif isinstance(body, collections.abc.Iterable):
                 for item in body:
                     try:
                         self._sock.send(item)
